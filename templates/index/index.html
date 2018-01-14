@@ -5,6 +5,28 @@
     <title>This is Index Page</title>
 </head>
 <body>
-    User: {{ username }}, {{ age }}
+
+<h3 style="color: red">If</h3>
+User:
+{% if user and user.age > 18 %}
+    {{ user.username }}, {{ user.age }}
+{% else %}
+    None
+{% endif %}
+<br>
+
+<h3 style="color: red">For</h3>
+{% for k,v in user.items() %}
+    <p>{{ k }}: {{ v }}</p>
+{% endfor %}
+<hr>
+{% for k in user.keys() %}
+    <p>{{ k }}</p>
+{% endfor %}
+<hr>
+{% for v in user.values() %}
+    <p>{{ v }}</p>
+{% endfor %}
+
 </body>
 </html>

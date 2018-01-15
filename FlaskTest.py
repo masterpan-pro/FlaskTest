@@ -9,7 +9,8 @@ app.config.from_object(config)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    # return 'Hello World!'
+    return redirect(url_for('index', is_login=1))
 
 
 @app.route('/login')
